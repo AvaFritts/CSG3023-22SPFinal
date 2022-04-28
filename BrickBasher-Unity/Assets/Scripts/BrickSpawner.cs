@@ -2,8 +2,8 @@
  * Created by: Bob Baloney
  * Date Created: April 20, 2022
  * 
- * Last Edited by: 
- * Last Edited:
+ * Last Edited by: Ava Fritts
+ * Last Edited: April 28 2022
  * 
  * Description: Spawns bircks
 ****/
@@ -36,8 +36,10 @@ public class BrickSpawner : MonoBehaviour
             {
                 Vector3 pos = new Vector3(x * brickPadding.x , y * brickPadding.y, 0); 
               
-                brickGo = Instantiate.brickPrefab; 
-              
+                //to instantiate, type ObjectType variable = Instantiate<type>(ObjectName);
+                GameObject brickGo = Instantiate<GameObject>(brickPrefab);
+                //instantiate.brickPrefab DOESN'T WORK as it might believe that instantiate is a class or object.
+
                 brickGo.transform.parent = transform; 
                 brickGo.transform.localPosition = pos; 
 
